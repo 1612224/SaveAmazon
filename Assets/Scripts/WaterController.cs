@@ -30,12 +30,12 @@ public class WaterController : MonoBehaviour
 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(to.position, radius);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
 
         line.SetPosition(0, from.position);
         line.SetPosition(1, to.position);
         line.enabled = true;
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.4f);
         line.enabled = false;
         for (int i = 0; i < colliders.Length; i++)
         {

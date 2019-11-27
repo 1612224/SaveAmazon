@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // movement
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D body;
     public int speed;
     private Vector2 movement;
     public Direction direction;
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rigidbody.position += movement.normalized * speed * Time.fixedDeltaTime;
+        body.position += movement.normalized * speed * Time.fixedDeltaTime;
     }
 
     public void Move(Vector2 mv)

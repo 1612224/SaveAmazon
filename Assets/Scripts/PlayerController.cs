@@ -5,61 +5,106 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum Tools
+    {
+        Water, Hammer,
+        TotalNum
+    }
+
+    public bool toolUseLock = false;
+    private List<Tools> tools;
+    private int currentTool = 0;
+    private Dictionary<Tools, Action> toolHandleFuncs;
+
+    [Header("Controllers")]
     public PlayerMovement movementController;
     public CarryingObject carryingController;
     public WaterController waterController;
+    public HammerController hammerController;
 
-    private Transform currentZone;
-
+    [Header("Carry detection zones")]
     public Transform leftDetect;
     public Transform rightDetect;
     public Transform upDetect;
     public Transform downDetect;
+    private Transform currentDetect;
 
+    [Header("Throw & water target zones")]
     public Transform leftDrop;
     public Transform rightDrop;
     public Transform upDrop;
     public Transform downDrop;
+    private Transform currentDrop;
 
+    [Header("Water shoot points")]
     public Transform leftFirePoint;
     public Transform rightFirePoint;
     public Transform upFirePoint;
     public Transform downFirePoint;
+    private Transform currentFirePoint;
+
+    [Header("Hammer hit zones")]
+    public Transform leftHammer;
+    public Transform rightHammer;
+    public Transform upHammer;
+    public Transform downHammer;
+    private Transform currentHammer;
+
+    private void Start()
+    {
+        toolHandleFuncs = new Dictionary<Tools, Action> {
+            { Tools.Water, HandleWater },
+            {Tools.Hammer, HandleHammer },
+        };
+        tools = new List<Tools> { Tools.Water, Tools.Hammer };
+    }
 
     // Update is called once per frame
     void Update()
     {
         HandleMovement();
         HandlePickupThrow();
-        HandleWater();
+        HandleToolChange();
+
+        // if is carrying something or is moving, cannot use tools
+        if (carryingController.IsCarrying() || movementController.IsMoving())
+        {
+            return;
+        }
+
+        HandleToolUse();
     }
 
-    private void HandleWater()
+    private void HandleToolUse()
     {
-        if (carryingController.IsCarrying() || movementController.IsMoving())
+        if (toolUseLock)
         {
             return;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            switch (movementController.direction)
-            {
-                case PlayerMovement.Direction.Up:
-                    StartCoroutine(waterController.WaterTo(upFirePoint, upDrop));
-                    break;
-                case PlayerMovement.Direction.Right:
-                    StartCoroutine(waterController.WaterTo(rightFirePoint, rightDrop));
-                    break;
-                case PlayerMovement.Direction.Down:
-                    StartCoroutine(waterController.WaterTo(downFirePoint, downDrop));
-                    break;
-                case PlayerMovement.Direction.Left:
-                    StartCoroutine(waterController.WaterTo(leftFirePoint, leftDrop));
-                    break;
-                default:
-                    throw new UnityException("WTF");
-            }
+            Tools tool = tools[currentTool];
+            Action handleFunc = toolHandleFuncs[tool];
+            handleFunc();
         }
+    }
+
+    private void HandleToolChange()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            currentTool = (currentTool + 1) % tools.Count;
+        }
+    }
+
+    private void HandleHammer()
+    {
+        StartCoroutine(hammerController.HammerTo(currentHammer));
+    }
+
+    private void HandleWater()
+    {
+        StartCoroutine(waterController.WaterTo(currentFirePoint, currentDrop));
     }
 
     void HandleMovement()
@@ -68,42 +113,48 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movementController.Move(movement);
+        switch (movementController.direction)
+        {
+            case PlayerMovement.Direction.Up:
+                currentDetect = upDetect;
+                currentDrop = upDrop;
+                currentFirePoint = upFirePoint;
+                currentHammer = upHammer;
+                break;
+            case PlayerMovement.Direction.Right:
+                currentDetect = rightDetect;
+                currentDrop = rightDrop;
+                currentFirePoint = rightFirePoint;
+                currentHammer = rightHammer;
+                break;
+            case PlayerMovement.Direction.Down:
+                currentDetect = downDetect;
+                currentDrop = downDrop;
+                currentFirePoint = downFirePoint;
+                currentHammer = downHammer;
+                break;
+            case PlayerMovement.Direction.Left:
+                currentDetect = leftDetect;
+                currentDrop = leftDrop;
+                currentFirePoint = leftFirePoint;
+                currentHammer = leftHammer;
+                break;
+            default:
+                throw new UnityException("WTF Unknown direction");
+        }
     }
 
     void HandlePickupThrow()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Transform detect;
-            Transform drop;
-            switch (movementController.direction)
-            {
-                case PlayerMovement.Direction.Up:
-                    detect = upDetect;
-                    drop = upDrop;
-                    break;
-                case PlayerMovement.Direction.Right:
-                    detect = rightDetect;
-                    drop = rightDrop;
-                    break;
-                case PlayerMovement.Direction.Down:
-                    detect = downDetect;
-                    drop = downDrop;
-                    break;
-                case PlayerMovement.Direction.Left:
-                    detect = leftDetect;
-                    drop = leftDrop;
-                    break;
-                default:
-                    throw new UnityException("WTF");
-            }
             if (carryingController.IsCarrying())
             {
-                carryingController.Throw(drop.position);
+                carryingController.Throw(currentDrop.position);
             }
             else
             {
-                Collider2D[] colliders = Physics2D.OverlapPointAll(detect.position);
+                Collider2D[] colliders = Physics2D.OverlapPointAll(currentDetect.position);
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     if (colliders[i] && colliders[i].CompareTag("Animal"))
@@ -128,29 +179,8 @@ public class PlayerController : MonoBehaviour
             GetComponent<Animator>().Play("Fall", -1, 0f);
             if (carryingController.IsCarrying())
             {
-                switch (movementController.direction)
-                {
-                    case PlayerMovement.Direction.Up:
-                        carryingController.Throw(upDrop.position);
-                        break;
-                    case PlayerMovement.Direction.Right:
-                        carryingController.Throw(rightDrop.position);
-                        break;
-                    case PlayerMovement.Direction.Down:
-                        carryingController.Throw(downDrop.position);
-                        break;
-                    case PlayerMovement.Direction.Left:
-                        carryingController.Throw(leftDrop.position);
-                        break;
-                    default:
-                        throw new UnityException("WTF");
-                }
+                carryingController.Throw(currentDrop.position);
             }
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
     }
 }
