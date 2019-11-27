@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: e89351fb18e99764db448f98e056b47e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6811675477080243265
+    second: jack_bring_stuff_0
+  - first:
+      213: 3905873583757653780
+    second: jack_bring_stuff_1
+  - first:
+      213: -7122541218022519851
+    second: jack_bring_stuff_2
+  - first:
+      213: -1252660927586361184
+    second: jack_bring_stuff_3
+  - first:
+      213: 4426108587389358055
+    second: jack_bring_stuff_4
+  - first:
+      213: -2337002627288506202
+    second: jack_bring_stuff_5
+  - first:
+      213: 2056216821109042000
+    second: jack_bring_stuff_6
+  - first:
+      213: 2842815442843672479
+    second: jack_bring_stuff_7
+  - first:
+      213: -8861502299429613165
+    second: jack_bring_stuff_8
+  - first:
+      213: 5599826521857721516
+    second: jack_bring_stuff_9
+  - first:
+      213: -434154705221291243
+    second: jack_bring_stuff_10
+  - first:
+      213: -2751943042129146927
+    second: jack_bring_stuff_11
+  - first:
+      213: 3847143174484086923
+    second: jack_bring_stuff_12
+  - first:
+      213: -8673440969515198626
+    second: jack_bring_stuff_13
+  - first:
+      213: -3936334086941795111
+    second: jack_bring_stuff_14
+  - first:
+      213: -5203995306394201012
+    second: jack_bring_stuff_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: jack_bring_stuff_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 66
+        width: 17
+        height: 26
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671bca3ccd2776940bc01cbbc71fec7d
+      internalID: 6811675477080243265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 33
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4886278e041f5499a7a560f72ae760
+      internalID: 3905873583757653780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 34
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3c1e5fec4d5569479e6fb15818ea66e
+      internalID: -7122541218022519851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c7646d4ecf87f04095ce1e4983477b8
+      internalID: -1252660927586361184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 67
+        width: 16
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc40b25fcf1f84479d6e67af864a573
+      internalID: 4426108587389358055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_5
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 67
+        width: 18
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b7bdd57ccbfdb48aa6f454d77ebb8d
+      internalID: -2337002627288506202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 67
+        width: 16
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bdfa35cdf0f154081765ae216648a4
+      internalID: 2056216821109042000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_7
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 67
+        width: 17
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9bfdea3f70d7c42b042e98700fdaf2
+      internalID: 2842815442843672479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_8
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 67
+        width: 17
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e129e9d28105ca34d9aea042a4440ff4
+      internalID: -8861502299429613165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 33
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df35327ecfde294488b8b2e0deca717
+      internalID: 5599826521857721516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 33
+        width: 17
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e11ea0584e72dd342870972ae44fe46c
+      internalID: -434154705221291243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 34
+        width: 17
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bf41271961b8f47a1c46c32acd3dce
+      internalID: -2751943042129146927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_12
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 34
+        width: 17
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d3df21eb1b46f409d34dca77cbc0f0
+      internalID: 3847143174484086923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 34
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f02acf64613e7438f50fd1fabe323f
+      internalID: -8673440969515198626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_14
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 6
+        width: 16
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2b2ddfe1beb6948a4ef98b89cb4867
+      internalID: -3936334086941795111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: jack_bring_stuff_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 6
+        width: 17
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4f3492f1b242141afd3ab8e18d7274
+      internalID: -5203995306394201012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2d2b5f97c6968e04eb1b2e5d81d5c8b4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
