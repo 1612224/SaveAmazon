@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Direction direction;
 
     public bool movementLock = false;
+    public SoundController soundController;
 
     // animation
     public Animator animator;
@@ -60,17 +61,21 @@ public class PlayerMovement : MonoBehaviour
         movement = mv;
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         if (mv.sqrMagnitude > 0)
-        
+        {
+            soundController.PlayRunningSound();
             if ((Mathf.Abs(mv.x) - Mathf.Abs(mv.y)) > 0)
             {
                 direction = mv.x > 0 ? Direction.Right : Direction.Left;
-            } else if (mv.y > 0)
+            }
+            else if (mv.y > 0)
             {
                 direction = Direction.Up;
-            } else
+            }
+            else
             {
                 direction = Direction.Down;
             }
+        }
     }
 
     public bool IsMoving()

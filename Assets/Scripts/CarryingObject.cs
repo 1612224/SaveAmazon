@@ -37,6 +37,7 @@ public class CarryingObject : MonoBehaviour
         currentObject = obj;
         obj.gameObject.GetComponent<IsometricController>().target = currentPosition;
         obj.gameObject.GetComponent<IsometricController>().offset = 1;
+        obj.gameObject.GetComponent<DestroyOnFire>().carrier = this;
         animator.SetBool("IsCarrying", true);
     }
     
@@ -44,6 +45,7 @@ public class CarryingObject : MonoBehaviour
     {
         currentObject.position = throwPosition;
         currentObject.gameObject.GetComponent<IsometricController>().target = null;
+        currentObject.gameObject.GetComponent<DestroyOnFire>().carrier = null;
         currentObject = null;
         animator.SetBool("IsCarrying", false);
     }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4257975246642987596}
   - component: {fileID: 4257975246642987599}
   - component: {fileID: 4257975246642987571}
+  - component: {fileID: 1156451067538352045}
   m_Layer: 0
   m_Name: CherryTree
   m_TagString: Tree
@@ -218,3 +219,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   offset: 0
+--- !u!114 &1156451067538352045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257975246642987598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b5226d8e06cb824c8e0b3cc00829d05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

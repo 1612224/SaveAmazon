@@ -1,12 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AnimalCount : MonoBehaviour
 {
     private int animalCount = 0;
+   
     public Collider2D checkCollider;
     public CarryingObject player;
+    public int totalAnimal;
+
+    public TextMeshProUGUI total;
+    public TextMeshProUGUI current;
+
+    private void Start()
+    {
+        total.text = totalAnimal.ToString();
+    }
 
     private void Update()
     {
@@ -19,12 +30,8 @@ public class AnimalCount : MonoBehaviour
             {
                 colliders[i].gameObject.SetActive(false);
                 animalCount++;
+                current.text = animalCount.ToString();
             }
         }
-    }
-
-    public int Count()
-    {
-        return animalCount;
     }
 }

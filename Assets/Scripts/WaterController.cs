@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class WaterController : MonoBehaviour
@@ -10,6 +11,14 @@ public class WaterController : MonoBehaviour
     public float radius;
 
     private bool waterlock = false;
+    public SoundController soundController;
+
+    public TextMeshProUGUI waterCount;
+
+    private void Update()
+    {
+        waterCount.text = ammo.ToString();
+    }
 
     public IEnumerator WaterTo(Transform from, Transform to)
     {
@@ -36,6 +45,8 @@ public class WaterController : MonoBehaviour
         line.SetPosition(1, to.position);
         line.enabled = true;
         yield return new WaitForSeconds(0.4f);
+        soundController.PlayPumpingWaterSound();
+
         line.enabled = false;
         for (int i = 0; i < colliders.Length; i++)
         {

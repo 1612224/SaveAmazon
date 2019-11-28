@@ -20,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - Carryable
+  - NotOnMinimap
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Gameplay
     uniqueID: 153995985
+    locked: 0
+  - name: Firezone
+    uniqueID: 399298031
     locked: 0
   - name: Popup
     uniqueID: 3548926227

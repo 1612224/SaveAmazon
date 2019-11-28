@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class PlayerController : MonoBehaviour
     private List<Tools> tools;
     private int currentTool = 0;
     private Dictionary<Tools, Action> toolHandleFuncs;
+    private Dictionary<Tools, Image> toolIconBgs;
+    private Dictionary<Tools, GameObject> toolIcons;
+
+    public GameObject WaterIcon;
+    public GameObject HammerIcon;
+    public Image WaterIconBg;
+    public Image HammerIconBg;
 
     [Header("Controllers")]
     public PlayerMovement movementController;
@@ -56,6 +64,14 @@ public class PlayerController : MonoBehaviour
             { Tools.Water, HandleWater },
             {Tools.Hammer, HandleHammer },
         };
+        toolIconBgs = new Dictionary<Tools, Image> {
+            { Tools.Water, WaterIconBg },
+            {Tools.Hammer, HammerIconBg },
+        };
+        toolIcons = new Dictionary<Tools, GameObject> {
+            { Tools.Water, WaterIcon },
+            {Tools.Hammer, HammerIcon },
+        };
         tools = new List<Tools> { Tools.Water };
     }
 
@@ -80,6 +96,8 @@ public class PlayerController : MonoBehaviour
         if (!HaveTool(type))
         {
             tools.Add(type);
+            toolIcons[type].SetActive(true);
+            toolIconBgs[type].color = Color.black;
         }
     }
 
@@ -113,7 +131,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            toolIconBgs[tools[currentTool]].color = Color.black;
             currentTool = (currentTool + 1) % tools.Count;
+            toolIconBgs[tools[currentTool]].color = Color.white;
         }
     }
 

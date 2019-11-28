@@ -10,7 +10,8 @@ public class TreeHide : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Tree"))
+        Transform colliderTransform = collision.transform;
+        if (collision.CompareTag("Tree") && colliderTransform.position.y  <= transform.position.y)
         {
             MakeTransparent(collision.GetComponent<Renderer>());
         }

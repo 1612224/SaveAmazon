@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class DamageCircle : MonoBehaviour
 {
+    
     public Transform TargetCircleTransform;
     public GameObject Fire;
-    public GameObject []Fires;
+    private GameObject []Fires;
 
     private static DamageCircle instance;
 
@@ -135,6 +136,13 @@ public class DamageCircle : MonoBehaviour
     }
     private void UpdateFires()
     {
+        int NEW_FIRES_AMOUNT = (int)Mathf.Round(CircleSize.x * 2f / 3f);
+        for (int i = NEW_FIRES_AMOUNT; i < FIRES_AMOUNT; ++i)
+        {
+            Fires[i].SetActive(false);
+        }
+        FIRES_AMOUNT = NEW_FIRES_AMOUNT;
+
         float angle = Mathf.PI / 2;
         float r = CircleSize.x * 9 / 100;
         for (int i = 0; i < FIRES_AMOUNT; ++i)
@@ -143,5 +151,6 @@ public class DamageCircle : MonoBehaviour
             angle += Mathf.PI / (FIRES_AMOUNT/2);
         }
 
+       
     }
 }
