@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             { Tools.Water, HandleWater },
             {Tools.Hammer, HandleHammer },
         };
-        tools = new List<Tools> { Tools.Water, Tools.Hammer };
+        tools = new List<Tools> { Tools.Water };
     }
 
     // Update is called once per frame
@@ -73,6 +73,26 @@ public class PlayerController : MonoBehaviour
         }
 
         HandleToolUse();
+    }
+
+    public void AddTool(Tools type)
+    {
+        if (!HaveTool(type))
+        {
+            tools.Add(type);
+        }
+    }
+
+    public bool HaveTool(Tools type)
+    {
+        for (int i = 0; i < tools.Count; i++)
+        {
+            if (tools[i] == type)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void HandleToolUse()
@@ -171,8 +191,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Supply"))
         {
-            waterController.ammo += 10;
-            collision.collider.gameObject.SetActive(false);
+            collision.collider.gameObject.GetComponent<SupplyController>().Supply(gameObject);
         }
         else if (collision.collider.CompareTag("Obstacle"))
         {
